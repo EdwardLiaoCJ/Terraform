@@ -1,43 +1,12 @@
-variable "org" {
-  default = "liaocj@cn.ibm.com"
+provider "ibm" {
+  bluemix_api_key    = "${var.ibm_bx_api_key}"
+  softlayer_username = "${var.ibm_sl_username}"
+  softlayer_api_key  = "${var.ibm_sl_api_key}"
 }
-
-variable "space" {
-  default = "dev"
-}
-
-variable "region" {
-  default = "us-south"
-}
-
-variable "datacenter" {}
-
-variable "machine_type" {}
-
-variable "isolation" {}
-
-variable "private_vlan_id" {}
-
-variable "public_vlan_id" {}
-
-variable "subnet_id" {}
-
-variable "service_instance_name" {
-  default = "myservice"
-}
-
-variable "service_key" {
-  default = "myservicekey"
-}
-
-variable "service_offering" {
-  default = "speech_to_text"
-}
-
-variable "plan" {
-  default = "lite"
-}
-
-variable "cluster_name" {
-  default = "mycluster"
+variable ibm_bx_api_key {}
+variable ibm_sl_username {}
+variable ibm_sl_api_key {}
+data "ibm_space" "spacedata" {
+  space = "dev"   # this will be different if you aren't is this space
+  org   = "liaocj@cn.ibm.com" # this will be different if you aren't is this org
 }
