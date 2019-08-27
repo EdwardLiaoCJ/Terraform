@@ -21,7 +21,7 @@ resource "ibm_container_cluster" "cluster" {
   account_guid = "${data.ibm_account.account.id}"
   no_subnet    = true
   subnet_id    = ["${var.subnet_id}"]
-  worker_num   = 2
+  worker_num   = 1
 
   machine_type    = "${var.machine_type}"
   isolation       = "${var.isolation}"
