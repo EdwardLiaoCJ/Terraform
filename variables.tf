@@ -1,8 +1,14 @@
-variable "org" {}
+variable "org" {
+  default = "liaocj@cn.ibm.com"
+}
 
-variable "space" {}
+variable "space" {
+  default = "dev"
+}
 
-variable "region" {}
+variable "region" {
+  default = "us-south"
+}
 
 variable "datacenter" {}
 
